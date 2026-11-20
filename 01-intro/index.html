@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>두부의 자기소개</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      color: #24324a;
+      background-color: #6332a0;
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      transition: background-color 0.5s ease;
+    }
+
+    .소개-카드 {
+      width: 100%;
+      max-width: 680px;
+      padding: 48px 40px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.94);
+      border: 1px solid #d9eaf5;
+      border-radius: 28px;
+      box-shadow: 0 18px 45px rgba(44, 93, 130, 0.15);
+    }
+
+    .작은-제목 {
+      margin: 0 0 10px;
+      color: #6332a0;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(36px, 8vw, 58px);
+    }
+
+    .한줄-소개 {
+      margin: 18px auto 36px;
+      color: #526278;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 23px;
+    }
+
+    .좋아하는-것 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      padding: 0;
+      margin: 0 0 36px;
+      list-style: none;
+    }
+
+    .좋아하는-것 li {
+      padding: 22px 12px;
+      background-color: #f5effc;
+      border-radius: 18px;
+      font-weight: 700;
+    }
+
+    .이모지 {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 32px;
+    }
+
+    button {
+      padding: 14px 24px;
+      color: #ffffff;
+      background-color: #6332a0;
+      border: 0;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(35, 131, 184, 0.25);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #4c247e;
+      transform: translateY(-2px);
+    }
+
+    button:focus-visible {
+      outline: 3px solid #ffbf47;
+      outline-offset: 4px;
+    }
+
+    .가상-이름 {
+      margin: 12px 0 0;
+      color: #6332a0;
+      font-weight: 700;
+    }
+
+    body { background: #6d45ad; padding: 48px 24px; color: #302442; }
+    .소개-카드 { max-width: 1040px; padding: 42px; border: 2px solid #ffffff80; border-radius: 36px; background: #faf7ff; box-shadow: 0 24px 70px #31145540; }
+    .상단 { display: flex; justify-content: space-between; align-items: center; padding-bottom: 24px; border-bottom: 1px solid #e8dff2; color: #765490; font-size: 14px; }
+    .상단 p { margin: 0; }
+    .소개-배치 { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; align-items: center; padding: 34px 0 20px; }
+    .인물-정보 { text-align: left; }
+    h1 { font-size: clamp(36px, 5vw, 54px); letter-spacing: -2px; }
+    .한줄-소개 { margin: 20px 0 26px; }
+    .꼬리표 { display: inline-block; margin-bottom: 16px; padding: 7px 12px; border-radius: 20px; background: #eee5f8; color: #725096; font-size: 13px; font-weight: 700; }
+    .취향-배치 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .취향 { padding: 20px; border-radius: 20px; background: #efe7fb; }
+    .취향:last-child { background: #f3edf2; }
+    .취향 h2 { font-size: 17px; margin-bottom: 14px; }
+    .취향 ul { list-style: none; padding: 0; margin: 0; }
+    .취향 li { margin-top: 12px; font-size: 14px; line-height: 1.6; }
+    .아바타-영역 { position: relative; padding: 24px 10px; border-radius: 26px; background: #e9ddf7; }
+    .아바타-버튼 { display: block; width: 240px; height: 300px; margin: auto; position: relative; padding: 0; background: transparent; box-shadow: none; border-radius: 30px; color: #302442; }
+    .아바타-버튼:hover { background: transparent; transform: rotate(-3deg); }
+    .인형 { position: absolute; inset: 0; pointer-events: none; --옷색: #7240b5; --바지색: #eee4fa; }
+    .그림자 { position: absolute; width: 150px; height: 22px; background: #c9b5e2; border-radius: 50%; bottom: 5px; left: 45px; }
+    .머리 { position: absolute; width: 122px; height: 118px; top: 28px; left: 59px; background: #ffdbbd; border: 3px solid #493443; border-radius: 46% 46% 44% 44%; z-index: 4; }
+    .머리카락 { position: absolute; width: 130px; height: 58px; top: 17px; left: 55px; background: #493443; border-radius: 60px 60px 24px 18px; z-index: 5; transform: rotate(-5deg); }
+    .머리카락::after { content: ""; position: absolute; width: 35px; height: 38px; background: #493443; right: 2px; top: 30px; border-radius: 0 0 24px 5px; }
+    .뒷머리 { position: absolute; width: 146px; height: 172px; top: 22px; left: 47px; background: #493443; border-radius: 65px 65px 30px 30px; z-index: 1; }
+    .머리카락::before { content: ""; position: absolute; width: 32px; height: 64px; left: 0; top: 22px; background: #493443; border-radius: 24px 0 24px 10px; }
+    .머리핀 { position: absolute; width: 27px; height: 9px; top: 50px; left: 65px; border-radius: 8px; background: #e5b7f7; border: 2px solid #f8e7ff; z-index: 6; transform: rotate(-20deg); }
+    .눈 { position: absolute; top: 59px; width: 7px; height: 10px; background: #493443; border-radius: 50%; }
+    .눈.왼쪽 { left: 31px; } .눈.오른쪽 { right: 31px; }
+    .볼 { position: absolute; top: 76px; width: 19px; height: 9px; border-radius: 50%; background: #f3a7a2; }
+    .볼.왼쪽 { left: 15px; } .볼.오른쪽 { right: 15px; }
+    .입 { position: absolute; width: 18px; height: 10px; border-bottom: 3px solid #493443; border-radius: 50%; top: 75px; left: 49px; }
+    .몸 { position: absolute; width: 100px; height: 96px; top: 138px; left: 70px; background: var(--옷색); border: 3px solid #493443; border-radius: 25px 25px 17px 17px; z-index: 3; overflow: hidden; }
+    .문양 { position: absolute; top: 30px; left: 0; right: 0; font-size: 25px; }
+    .팔 { position: absolute; top: 145px; width: 32px; height: 82px; background: var(--옷색); border: 3px solid #493443; border-radius: 20px; z-index: 2; }
+    .팔.왼쪽 { left: 48px; transform: rotate(16deg); } .팔.오른쪽 { right: 48px; transform: rotate(-16deg); }
+    .팔::after { content: ""; position: absolute; bottom: -2px; left: -3px; width: 32px; height: 25px; background: #ffdbbd; border: 3px solid #493443; border-radius: 15px; }
+    .다리 { position: absolute; top: 221px; width: 38px; height: 58px; border: 3px solid #493443; background: var(--바지색); border-radius: 0 0 12px 12px; z-index: 2; }
+    .다리.왼쪽 { left: 78px; } .다리.오른쪽 { right: 78px; }
+    .다리::after { content: ""; position: absolute; bottom: -6px; left: -6px; width: 42px; height: 17px; background: #fffaf0; border: 3px solid #493443; border-radius: 12px; }
+    .인형[data-옷="줄무늬"] { --옷색: #fff7e7; --바지색: #688fb9; }
+    .인형[data-옷="줄무늬"] .몸 { background: repeating-linear-gradient(#fff7e7 0 12px, #ed8a76 12px 20px); }
+    .인형[data-옷="멜빵"] { --옷색: #f3c75e; --바지색: #648b76; }
+    .인형[data-옷="멜빵"] .몸::after { content: ""; position: absolute; inset: 0 13px; border-left: 12px solid #648b76; border-right: 12px solid #648b76; }
+    .인형[data-옷="후드"] { --옷색: #8bbbad; --바지색: #56536d; }
+    .인형[data-옷="후드"] .몸::after { content: ""; position: absolute; width: 52px; height: 24px; bottom: 10px; left: 21px; border: 2px solid #527d70; border-radius: 14px 14px 8px 8px; }
+    .옷-이름 { margin: 10px 0; color: #5c347f; font-weight: 700; }
+    .안내 { margin: 0; color: #735c85; font-size: 13px; line-height: 1.7; }
+    @media (max-width: 760px) {
+      body { padding: 20px 14px; }
+      .소개-카드 { padding: 24px 20px; }
+      .소개-배치 { grid-template-columns: 1fr; gap: 28px; }
+      .인물-정보 { text-align: center; }
+      .취향 { text-align: left; padding: 16px; }
+      .상단 { font-size: 12px; gap: 12px; }
+    }
+    @media (max-width: 380px) { .취향-배치 { grid-template-columns: 1fr; } }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+    @media (max-width: 540px) {
+      .소개-카드 {
+        padding: 36px 22px;
+      }
+
+      .좋아하는-것 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="소개-카드">
+    <header class="상단"><p>두부의 작은 소개서</p><p>함께 친해져요 ✦</p></header>
+    <div class="소개-배치">
+    <section class="아바타-영역" aria-label="두부의 옷장">
+      <span class="꼬리표">오늘은 어떤 옷을 입을까요?</span>
+      <button class="아바타-버튼" id="아바타-버튼" type="button" aria-label="두부의 옷 갈아입히기" aria-describedby="옷-이름 아바타-안내">
+        <span class="인형" id="인형" data-옷="티셔츠" aria-hidden="true">
+          <span class="그림자"></span><span class="뒷머리"></span><span class="머리카락"></span><span class="머리핀"></span>
+          <span class="머리"><span class="눈 왼쪽"></span><span class="눈 오른쪽"></span><span class="볼 왼쪽"></span><span class="볼 오른쪽"></span><span class="입"></span></span>
+          <span class="팔 왼쪽"></span><span class="팔 오른쪽"></span>
+          <span class="몸"><span class="문양" id="옷-문양">✿</span></span>
+          <span class="다리 왼쪽"></span><span class="다리 오른쪽"></span>
+        </span>
+      </button>
+      <p class="옷-이름" id="옷-이름" aria-live="polite">보라색 티셔츠</p>
+      <p class="안내" id="아바타-안내">인형을 눌러 옷을 갈아입혀 주세요!<br>키보드의 엔터나 스페이스 키로도 바꿀 수 있어요.</p>
+    </section>
+    <div class="인물-정보">
+    <p class="작은-제목">처음 만나서 반가워요!</p>
+    <h1>저는 두부예요</h1>
+    <p class="가상-이름">가상 이름: 한도윤 · 별명: 두부</p>
+    <p class="한줄-소개">사진 찍기와 카페 탐방을 좋아하는 여자 대학생입니다.</p>
+
+    <div class="취향-배치">
+    <section class="취향" aria-labelledby="좋아하는-것-제목">
+      <h2 id="좋아하는-것-제목">제가 좋아하는 것</h2>
+      <ul>
+        <li>🌶️ 떡볶이</li>
+        <li>🐱 고양이</li>
+        <li>☕ 카페 탐방</li>
+      </ul>
+    </section>
+
+    <section class="취향" aria-labelledby="싫어하는-것-제목">
+      <h2 id="싫어하는-것-제목">제가 싫어하는 것</h2>
+      <ul><li>⏰ 지각하기</li><li>📢 시끄러운 공부 공간</li><li>🌧️ 비 오는 날 젖은 신발</li></ul>
+    </section>
+    </div>
+    </div>
+    </div>
+  </main>
+
+  <script>
+    const 옷목록 = [
+      { 종류: "티셔츠", 이름: "보라색 티셔츠", 문양: "✿" },
+      { 종류: "줄무늬", 이름: "줄무늬 티셔츠", 문양: "" },
+      { 종류: "멜빵", 이름: "초록 멜빵바지", 문양: "" },
+      { 종류: "후드", 이름: "민트 후드티", 문양: "" }
+    ];
+    let 현재옷 = 0;
+    const 아바타버튼 = document.querySelector("#아바타-버튼");
+    const 인형 = document.querySelector("#인형");
+    const 옷이름 = document.querySelector("#옷-이름");
+    const 옷문양 = document.querySelector("#옷-문양");
+
+    // 기본 버튼이라 마우스, 터치, 엔터, 스페이스 입력에 모두 반응합니다.
+    아바타버튼.addEventListener("click", function () {
+      현재옷 = (현재옷 + 1) % 옷목록.length;
+      const 선택한옷 = 옷목록[현재옷];
+      인형.dataset.옷 = 선택한옷.종류;
+      옷이름.textContent = 선택한옷.이름;
+      옷문양.textContent = 선택한옷.문양;
+    });
+  </script>
+</body>
+</html>

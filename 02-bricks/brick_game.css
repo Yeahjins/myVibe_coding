@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-width: 1024px;
+  min-height: 768px;
+  background: linear-gradient(135deg, #45d7f0, #fff29a 52%, #ff9ec4);
+  color: #16324f;
+  font-family: "Malgun Gothic", "맑은 고딕", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.game-page {
+  width: 1000px;
+  padding-top: 6px;
+  text-align: center;
+}
+
+h1 {
+  height: 34px;
+  margin: 0;
+  color: #ffffff;
+  text-shadow: 0 2px 0 #168da6, 2px 3px 0 rgba(22, 50, 79, 0.3);
+  font-size: 25px;
+  line-height: 34px;
+}
+
+#gameCanvas {
+  display: block;
+  width: 1000px;
+  height: 700px;
+  background-color: #c8f5ff;
+  border: 3px solid #168da6;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(22, 50, 79, 0.28);
+}
